@@ -1,7 +1,7 @@
 # git-workflow
 
 [![Version](https://img.shields.io/badge/version-v1.0.0-6f42c1)](./SKILL.md)
-[![Tools](https://img.shields.io/badge/opencode%20%7C%20Claude%20Code%20%7C%20Codex-workflow-0ea5e9)](./README.md)
+[![Tools](https://img.shields.io/badge/Tools-opencode%20%7C%20Claude%20Code%20%7C%20Codex-0ea5e9)](./README.md)
 [![Git Workflow](https://img.shields.io/badge/Git%20Workflow-branch%20%7C%20commit%20%7C%20merge-f97316)](./SKILL.md)
 [![License](https://img.shields.io/badge/license-MIT-22c55e)](./LICENSE)
 
