@@ -1,6 +1,8 @@
 ---
 name: git-workflow
 description: 通用 git 开发工作流规范，适用于任何软件项目。当用户提到分支管理、commit 消息格式、合并消息、合并到 main、推送策略、分支命名、"暂定稳定"、"merge 到 main"、"commit 提交规范"、"merge 消息"、"push 备份"等开发工作流话题，或用户开始一个新功能分支、准备提交、准备合并、准备推送时触发。包括分支工作流、MAA 风格 commit 与合并消息格式、分支命名、推送策略与稳定判定标准。
+metadata:
+  version: "1.0.0"
 ---
 
 # Git 开发工作流

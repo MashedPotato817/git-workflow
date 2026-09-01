@@ -1,5 +1,10 @@
 # git-workflow
 
+[![Version](https://img.shields.io/badge/version-v1.0.0-6f42c1)](./SKILL.md)
+[![Tools](https://img.shields.io/badge/opencode%20%7C%20Claude%20Code%20%7C%20Codex-workflow-0ea5e9)](./README.md)
+[![Git Workflow](https://img.shields.io/badge/Git%20Workflow-branch%20%7C%20commit%20%7C%20merge-f97316)](./SKILL.md)
+[![License](https://img.shields.io/badge/license-MIT-22c55e)](./LICENSE)
+
 一套可复用的 **agent skill**，为任何 git 项目提供统一的开发工作流规范：分支管理、MAA 风格 commit / merge 消息格式、推送策略与"暂定稳定"判定标准。基于跨工具通用的 `SKILL.md` 标准（Agent Skills 规范），兼容 opencode、Claude Code、OpenAI Codex、Cursor 等。
 
 > 目标：提交历史清晰可回溯，`main` 始终保持在稳定状态。
