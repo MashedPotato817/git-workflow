@@ -1,6 +1,6 @@
 # git-workflow
 
-一套可复用的 **opencode skill**，为任何 git 项目提供统一的开发工作流规范：分支管理、MAA 风格 commit / merge 消息格式、推送策略与"暂定稳定"判定标准。
+一套可复用的 **agent skill**，为任何 git 项目提供统一的开发工作流规范：分支管理、MAA 风格 commit / merge 消息格式、推送策略与"暂定稳定"判定标准。基于跨工具通用的 `SKILL.md` 标准（Agent Skills 规范），兼容 opencode、Claude Code、OpenAI Codex、Cursor 等。
 
 > 目标：提交历史清晰可回溯，`main` 始终保持在稳定状态。
 
@@ -13,9 +13,47 @@
 - **推送与稳定策略**：个人仓库备份式推送、明确的稳定判定标准
 - **冲突与回滚指南**：处理合并冲突、`git revert` / `git reset` 的正确姿势
 
+## 支持的 AI 工具
+
+`SKILL.md` 采用跨工具通用的 Agent Skills 标准，同一份文件可直接用于以下工具：
+
+| 工具 | 全局目录（所有项目生效） | 项目目录（当前仓库生效） |
+| ---- | ---- | ---- |
+| opencode | `~/.config/opencode/skills/git-workflow/` | `.opencode/skills/git-workflow/` |
+| Claude Code | `~/.claude/skills/git-workflow/` | `.claude/skills/git-workflow/` |
+| OpenAI Codex | `~/.codex/skills/git-workflow/` | `.codex/skills/git-workflow/` |
+| Codex（新标准） | `~/.agents/skills/git-workflow/` | `$REPO_ROOT/.agents/skills/git-workflow/` |
+| Cursor | — | `.cursor/skills/git-workflow/` |
+
+各工具安装示例（以全局安装为例）：
+
+```bash
+# opencode
+mkdir -p ~/.config/opencode/skills/git-workflow && cp SKILL.md ~/.config/opencode/skills/git-workflow/
+# Claude Code
+mkdir -p ~/.claude/skills/git-workflow && cp SKILL.md ~/.claude/skills/git-workflow/
+# OpenAI Codex
+mkdir -p ~/.codex/skills/git-workflow && cp SKILL.md ~/.codex/skills/git-workflow/
+# Codex（新标准）
+mkdir -p ~/.agents/skills/git-workflow && cp SKILL.md ~/.agents/skills/git-workflow/
+```
+
+Windows PowerShell：
+
+```powershell
+Copy-Item SKILL.md "$env:USERPROFILE\.config\opencode\skills\git-workflow\"
+Copy-Item SKILL.md "$env:USERPROFILE\.claude\skills\git-workflow\"
+Copy-Item SKILL.md "$env:USERPROFILE\.codex\skills\git-workflow\"
+Copy-Item SKILL.md "$env:USERPROFILE\.agents\skills\git-workflow\"
+```
+
+> 也可直接把本仓库 `git clone` 到上述任意目录。安装后**重启对应工具**才会生效。
+
 ## 安装
 
-> 前置：安装 [opencode](https://opencode.ai)（当前版本即可）。
+> 前置：安装任一支持 Agent Skills 的工具（[opencode](https://opencode.ai)、[Claude Code](https://code.claude.com)、[OpenAI Codex](https://developers.openai.com/codex/) 等）。
+>
+> 下面以 opencode 为例，其他工具的目录见上方「支持的 AI 工具」表。
 
 ### 方式一：全局安装（推荐，所有项目生效）
 
@@ -106,6 +144,14 @@ git push origin main
 ## 自定义
 
 如需调整（例如改用英文主体、新增类型、改变分支命名规则），直接编辑 `SKILL.md` 中的对应章节即可；全局安装时修改 `~/.config/opencode/skills/git-workflow/SKILL.md`。
+
+## GitHub Topics 推荐
+
+本仓库建议设置的 topics（GitHub 仓库页 → About → 编辑 → Topics）：
+
+```
+skill, skills, agent-skills, opencode, claude-code, claude, codex, openai-codex, ai, ai-agent, git, git-workflow, version-control, workflow, developer-tools, automation, commit-message
+```
 
 ## License
 
